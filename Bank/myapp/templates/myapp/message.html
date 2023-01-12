@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} application form {% endblock %}
+{% block content %}
+    <h4 class="text-success">Application Accepted</h4>
+    <p><a href="{% url 'home' %}">Return to Home</a></p>
+{% endblock %}

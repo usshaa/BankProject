@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+   <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+           {% if user.is_authenticated %}
+            Hi {{ user.username }}!
+             <p>You are logged in</p>
+            <button class="btn btn-dark"><a class="btn-link text-light" href="{% url 'form' %}">Click here to Fill Application</a></button>
+            <button class="btn btn-dark"><a class="btn-link text-light" href="{% url 'home' %}">Log Out</a></button>
+            {% else %}
+             <p>You are not logged in</p>
+            <button><a href="{% url 'login' %}">Log In</a></button>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
